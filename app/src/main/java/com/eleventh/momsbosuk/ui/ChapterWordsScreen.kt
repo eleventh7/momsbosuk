@@ -65,7 +65,6 @@ fun ChapterWordsScreen() {
     } else {
         ChapterWordsDetailScreen(
             category = selected!!,
-            onBack = { selected = null },
             onToggle = {
                 Log.d("ChapterWords", "onToggle 호출됨 (아직 기능 없음)")
             }
@@ -133,7 +132,6 @@ private fun ChapterWordsListScreen(
 @Composable
 private fun ChapterWordsDetailScreen(
     category: CategorySpec,
-    onBack: () -> Unit,
     onToggle: () -> Unit
 ) {
     val ctx = LocalContext.current
