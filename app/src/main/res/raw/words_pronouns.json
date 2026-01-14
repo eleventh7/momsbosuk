@@ -1,0 +1,35 @@
+{
+  "chapter": 9,
+  "title": "대명사",
+  "items": [
+    { "id": 1, "sinhala": "මම", "meaning": "나(주격)", "ipa": "/mamə/" },
+    { "id": 2, "sinhala": "මට", "meaning": "나에게(여격)", "ipa": "/maʈə/" },
+    { "id": 3, "sinhala": "මගේ", "meaning": "나의(소유격)", "ipa": "/mage/" },
+    { "id": 4, "sinhala": "මාව", "meaning": "나를(목적격)", "ipa": "/maːʋə/" },
+
+    { "id": 5, "sinhala": "ඔයා", "meaning": "너", "ipa": "/oːja/" },
+    { "id": 6, "sinhala": "ඔයාට", "meaning": "너에게", "ipa": "/oːjaʈə/" },
+    { "id": 7, "sinhala": "ඔයාගේ", "meaning": "너의", "ipa": "/oːjage/" },
+    { "id": 8, "sinhala": "ඔයාව", "meaning": "너를", "ipa": "/oːjaʋə/" },
+
+    { "id": 9, "sinhala": "එයා", "meaning": "그", "ipa": "/eːja/" },
+    { "id": 10, "sinhala": "එයාට", "meaning": "그에게", "ipa": "/eːjaʈə/" },
+    { "id": 11, "sinhala": "එයාගේ", "meaning": "그의", "ipa": "/eːjage/" },
+    { "id": 12, "sinhala": "එයාව", "meaning": "그를", "ipa": "/eːjaʋə/" },
+
+    { "id": 13, "sinhala": "අපි", "meaning": "우리", "ipa": "/api/" },
+    { "id": 14, "sinhala": "අපිට", "meaning": "우리에게", "ipa": "/apiʈə/" },
+    { "id": 15, "sinhala": "අපේ", "meaning": "우리의", "ipa": "/apeː/" },
+    { "id": 16, "sinhala": "අපිව", "meaning": "우리를", "ipa": "/apiʋə/" },
+
+    { "id": 17, "sinhala": "එයාලා", "meaning": "그들", "ipa": "/eːjaːlaː/" },
+    { "id": 18, "sinhala": "එයාලට", "meaning": "그들에게", "ipa": "/eːjaːlaʈə/" },
+    { "id": 19, "sinhala": "එයාලගේ", "meaning": "그들의", "ipa": "/eːjaːlage/" },
+    { "id": 20, "sinhala": "එයාලව", "meaning": "그들을", "ipa": "/eːjaːlaʋə/" },
+
+    { "id": 21, "sinhala": "එයෝල්ලෝ", "meaning": "그들", "ipa": "/eːjoːlloː/" },
+    { "id": 22, "sinhala": "එයෝල්ලට", "meaning": "그들에게", "ipa": "/eːjoːlloːʈə/" },
+    { "id": 23, "sinhala": "එයෝල්ලගේ", "meaning": "그들의", "ipa": "/eːjoːlloːge/" },
+    { "id": 24, "sinhala": "එයෝල්ලව", "meaning": "그들을", "ipa": "/eːjoːlloːʋə/" }
+  ]
+}

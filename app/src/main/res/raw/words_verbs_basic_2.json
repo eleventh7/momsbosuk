@@ -1,0 +1,26 @@
+{
+  "chapter": 4,
+  "title": "기초 동사 2",
+  "items": [
+    { "id": 1,  "sinhala": "තිබෙනවා", "meaning": "있다(물건)", "ipa": "/tibenavā/" },
+    { "id": 2,  "sinhala": "තිබුණා", "meaning": "있었다(물건)", "ipa": "/tibuṇā/" },
+
+    { "id": 3,  "sinhala": "තියනවා", "meaning": "두다", "ipa": "/tiyanavā/" },
+    { "id": 4,  "sinhala": "තිබා", "meaning": "두었다", "ipa": "/tibā/" },
+
+    { "id": 5,  "sinhala": "ගෙන එනවා", "meaning": "가져오다", "ipa": "/gena enavā/" },
+    { "id": 6,  "sinhala": "ගෙන ආවා", "meaning": "가져왔다", "ipa": "/gena āwā/" },
+
+    { "id": 7,  "sinhala": "කියනවා", "meaning": "말하다", "ipa": "/kiyanavā/" },
+    { "id": 8,  "sinhala": "කිව්වා", "meaning": "말했다", "ipa": "/kiwwā/" },
+
+    { "id": 9,  "sinhala": "දන්නවා", "meaning": "알다", "ipa": "/dannavā/" },
+    { "id": 10, "sinhala": "දැනගත්තා", "meaning": "알았다", "ipa": "/dæna gattā/" },
+
+    { "id": 11, "sinhala": "පේනවා", "meaning": "보이다", "ipa": "/pēnavā/" },
+    { "id": 12, "sinhala": "පේනුණා", "meaning": "보였다", "ipa": "/pēnuṇā/" },
+
+    { "id": 13, "sinhala": "බලනවා", "meaning": "보다", "ipa": "/balanavā/" },
+    { "id": 14, "sinhala": "බැලුවා", "meaning": "보았다", "ipa": "/bæluwā/" }
+  ]
+}

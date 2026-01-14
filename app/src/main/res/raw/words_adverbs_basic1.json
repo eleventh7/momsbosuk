@@ -1,0 +1,29 @@
+{
+  "chapter": 8,
+  "title": "기초 부사",
+  "items": [
+    { "id": 1,  "sinhala": "හිමිං", "meaning": "천천히", "ipa": "" },
+    { "id": 2,  "sinhala": "ඉක්මනින්", "meaning": "빨리", "ipa": "" },
+    { "id": 3,  "sinhala": "පදින", "meaning": "굳게", "ipa": "" },
+    { "id": 4,  "sinhala": "සාවධානෙන්", "meaning": "조심히", "ipa": "" },
+    { "id": 5,  "sinhala": "ආදරෙන්", "meaning": "사랑스럽게", "ipa": "" },
+
+    { "id": 6,  "sinhala": "සැලකිල්ලෙන්", "meaning": "주의깊게", "ipa": "" },
+    { "id": 7,  "sinhala": "හොඳින්", "meaning": "잘", "ipa": "" },
+    { "id": 8,  "sinhala": "කැඩීට", "meaning": "추하게", "ipa": "" },
+    { "id": 9,  "sinhala": "කඩිනමින්", "meaning": "부지런히", "ipa": "" },
+    { "id": 10, "sinhala": "දුරින්", "meaning": "멀리", "ipa": "" },
+
+    { "id": 11, "sinhala": "රසවත්", "meaning": "맛있게", "ipa": "" },
+    { "id": 12, "sinhala": "ලස්සනට", "meaning": "예쁘게", "ipa": "" },
+    { "id": 13, "sinhala": "උණුසුමෙන්", "meaning": "따뜻하게", "ipa": "" },
+    { "id": 14, "sinhala": "දුර්වලෙන්", "meaning": "두렵게", "ipa": "" },
+    { "id": 15, "sinhala": "රස්නෙන්", "meaning": "덥게", "ipa": "" },
+
+    { "id": 16, "sinhala": "සිසිලෙන්", "meaning": "시원하게", "ipa": "" },
+    { "id": 17, "sinhala": "හරි", "meaning": "옳게", "ipa": "" },
+    { "id": 18, "sinhala": "අඩුවෙන්", "meaning": "적게", "ipa": "" },
+    { "id": 19, "sinhala": "වැඩියෙන්", "meaning": "많이", "ipa": "" },
+    { "id": 20, "sinhala": "නැවත", "meaning": "다시", "ipa": "" }
+  ]
+}

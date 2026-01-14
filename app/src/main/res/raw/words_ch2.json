@@ -1,0 +1,22 @@
+{
+  "chapter": 1,
+  "title": "Chapter 1",
+  "items": [
+    {
+      "id": 1,
+      "sinhala": "දෙව්වා",
+      "word": "하나님",
+      "ipa": "ˈhananim",
+      "written": "하나님",
+      "spoken": "하나님"
+    },
+    {
+      "id": 2,
+      "sinhala": "මනුෂ්‍ය",
+      "word": "사람",
+      "ipa": "saram",
+      "written": "사람",
+      "spoken": "사람"
+    }
+  ]
+}

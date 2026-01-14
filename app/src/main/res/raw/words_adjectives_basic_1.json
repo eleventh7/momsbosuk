@@ -1,0 +1,27 @@
+{
+  "chapter": 5,
+  "title": "기초 형용사 1",
+  "items": [
+    { "id": 1, "sinhala": "ළඟ", "meaning": "가까운", "ipa": "/ɭaŋɡa/" },
+    { "id": 2, "sinhala": "සැහැල්ලු", "meaning": "가벼운", "ipa": "/sæhælːu/" },
+    { "id": 3, "sinhala": "බොරු", "meaning": "거짓의", "ipa": "/boru/" },
+    { "id": 4, "sinhala": "කම්මැලි", "meaning": "게으른", "ipa": "/kammæli/" },
+    { "id": 5, "sinhala": "පිරිසිදු", "meaning": "깨끗한", "ipa": "/pirisidu/" },
+    { "id": 6, "sinhala": "නරක", "meaning": "나쁜", "ipa": "/naraka/" },
+    { "id": 7, "sinhala": "පලල", "meaning": "넓은", "ipa": "/palala/" },
+    { "id": 8, "sinhala": "වෙනස්", "meaning": "다른", "ipa": "/wenas/" },
+    { "id": 9, "sinhala": "රවු", "meaning": "둥근", "ipa": "/rawa/" },
+    { "id": 10, "sinhala": "උණු", "meaning": "뜨거운", "ipa": "/uɳu/" },
+
+    { "id": 11, "sinhala": "රස", "meaning": "맛있는", "ipa": "/rasa/" },
+    { "id": 12, "sinhala": "කැත", "meaning": "못 생긴", "ipa": "/kæta/" },
+    { "id": 13, "sinhala": "පොහොසත්", "meaning": "부유한", "ipa": "/pohosat̪/" },
+    { "id": 14, "sinhala": "ගණන්", "meaning": "비싼", "ipa": "/ɡaɳan/" },
+    { "id": 15, "sinhala": "ඇත්ත", "meaning": "사실의", "ipa": "/æt̪t̪a/" },
+    { "id": 16, "sinhala": "ලේසි", "meaning": "쉬운", "ipa": "/leːsi/" },
+    { "id": 17, "sinhala": "ලාබ", "meaning": "싼", "ipa": "/laːba/" },
+    { "id": 18, "sinhala": "ලස්සන", "meaning": "아름다운", "ipa": "/lassana/" },
+    { "id": 19, "sinhala": "තරුණ", "meaning": "어린", "ipa": "/t̪aruɳa/" },
+    { "id": 20, "sinhala": "පරණ", "meaning": "오래된", "ipa": "/paraɳa/" }
+  ]
+}

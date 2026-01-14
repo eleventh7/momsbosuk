@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "vowel",
+      "title": "싱할라 모음",
+      "source": "words_vowel"
+    },
+    {
+      "id": "consonant",
+      "title": "싱할라 자음",
+      "source": "words_consonant"
+    },
+    {
+      "id": "verbs.basic.1",
+      "title": "기초 동사 1",
+      "source": "words_verbs_basic_1"
+    },
+    {
+      "id": "verbs.basic.2",
+      "title": "기초 동사 2",
+      "source": "words_verbs_basic_2"
+    },
+    {
+      "id": "adjectives.basic.1",
+      "title": "기초 형용사 1",
+      "source": "words_adjectives_basic_1"
+    },
+    {
+      "id": "adjectives.basic.2",
+      "title": "기초 형용사 2",
+      "source": "words_adjectives_basic_2"
+    },
+    {
+      "id": "adjectives.basic.3",
+      "title": "기초 형용사 3",
+      "source": "words_adjectives_basic_3"
+    },
+
+    {
+      "id": "adverbs.basic",
+      "title": "부사",
+      "source": "words_adverbs_basic1"
+    },
+
+    {
+      "id": "pronouns",
+      "title": "대명사",
+      "source": "words_pronouns"
+    },
+
+    {
+      "id": "time",
+      "title": "시간 표현",
+      "source": "words_time"
+    },
+
+    {
+      "id": "body",
+      "title": "신체 표현",
+      "source": "words_body"
+    },
+
+    {
+      "id": "health",
+      "title": "건강 표현",
+      "source": "words_health"
+    },
+
+    {
+      "id": "drinks",
+      "title": "마실 것",
+      "source": "words_drinks"
+    },
+
+    {
+      "id": "conjunctions",
+      "title": "접속사",
+      "source": "words_conjunctions"
+    },
+
+    {
+      "id": "postpositions",
+      "title": "후치사",
+      "source": "words_postpositions"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "chapter": 7,
+  "title": "기초 형용사 3",
+  "items": [
+    { "id": 1, "sinhala": "සිසිල්", "meaning": "시원한", "ipa": "/sisil/" },
+    { "id": 2, "sinhala": "හොඳ", "meaning": "좋은", "ipa": "/hoːd̪a/" },
+    { "id": 3, "sinhala": "නරක", "meaning": "나쁜", "ipa": "/naraka/" },
+    { "id": 4, "sinhala": "ඉතාමත් හොඳ", "meaning": "훌륭한", "ipa": "/it̪aːmat̪ hoːd̪a/" },
+    { "id": 5, "sinhala": "වැරදි", "meaning": "잘못된", "ipa": "/wæradi/" },
+
+    { "id": 6, "sinhala": "සුන්දර", "meaning": "아름다운", "ipa": "/sund̪ara/" },
+    { "id": 7, "sinhala": "අමාරු", "meaning": "어려운", "ipa": "/amaːru/" },
+    { "id": 8, "sinhala": "බුද්ධිමත්", "meaning": "영리한", "ipa": "/bud̪d̪ʱimat̪/" },
+    { "id": 9, "sinhala": "හරි", "meaning": "옳은", "ipa": "/hari/" },
+    { "id": 10, "sinhala": "නව", "meaning": "신(새로운)", "ipa": "/nawa/" }
+  ]
+}

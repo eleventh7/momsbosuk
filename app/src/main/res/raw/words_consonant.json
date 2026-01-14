@@ -1,0 +1,42 @@
+{
+  "chapter": 2,
+  "title": "싱할라 자음",
+  "items": [
+    { "id": 1,  "sinhala": "ක", "ipa": "ka",   "meaning": "까" },
+    { "id": 2,  "sinhala": "ඛ", "ipa": "kʰa",  "meaning": "카" },
+    { "id": 3,  "sinhala": "ග", "ipa": "ga",   "meaning": "가" },
+    { "id": 4,  "sinhala": "ඝ", "ipa": "gʰa",  "meaning": "가-" },
+
+    { "id": 5,  "sinhala": "ච", "ipa": "t͡ʃa",  "meaning": "짜" },
+    { "id": 6,  "sinhala": "ඡ", "ipa": "t͡ʃʰa", "meaning": "차" },
+    { "id": 7,  "sinhala": "ජ", "ipa": "d͡ʒa",  "meaning": "자" },
+    { "id": 8,  "sinhala": "ඣ", "ipa": "d͡ʒʰa", "meaning": "자-" },
+
+    { "id": 9,  "sinhala": "ට", "ipa": "ʈa",   "meaning": "따 (권설)" },
+    { "id": 10, "sinhala": "ඨ", "ipa": "ʈʰa",  "meaning": "타 (권설)" },
+    { "id": 11, "sinhala": "ඩ", "ipa": "ɖa",   "meaning": "다 (권설)" },
+    { "id": 12, "sinhala": "ඪ", "ipa": "ɖʰa",  "meaning": "다- (권설)" },
+
+    { "id": 13, "sinhala": "ත", "ipa": "ta",   "meaning": "따" },
+    { "id": 14, "sinhala": "ථ", "ipa": "tʰa",  "meaning": "타" },
+    { "id": 15, "sinhala": "ද", "ipa": "da",   "meaning": "다" },
+    { "id": 16, "sinhala": "ධ", "ipa": "dʰa",  "meaning": "다-" },
+
+    { "id": 17, "sinhala": "ප", "ipa": "pa",   "meaning": "빠" },
+    { "id": 18, "sinhala": "ඵ", "ipa": "pʰa",  "meaning": "파" },
+    { "id": 19, "sinhala": "බ", "ipa": "ba",   "meaning": "바" },
+    { "id": 20, "sinhala": "භ", "ipa": "bʰa",  "meaning": "바-" },
+
+    { "id": 21, "sinhala": "ම", "ipa": "ma",   "meaning": "마" },
+    { "id": 22, "sinhala": "න", "ipa": "na",   "meaning": "나" },
+    { "id": 23, "sinhala": "ණ", "ipa": "ɳa",   "meaning": "나 (권설)" },
+
+    { "id": 24, "sinhala": "ය", "ipa": "ja",   "meaning": "야" },
+    { "id": 25, "sinhala": "ර", "ipa": "ra",   "meaning": "라" },
+    { "id": 26, "sinhala": "ල", "ipa": "la",   "meaning": "라" },
+    { "id": 27, "sinhala": "ව", "ipa": "va",   "meaning": "와" },
+
+    { "id": 28, "sinhala": "ස", "ipa": "sa",   "meaning": "사" },
+    { "id": 29, "sinhala": "හ", "ipa": "ha",   "meaning": "하" }
+  ]
+}

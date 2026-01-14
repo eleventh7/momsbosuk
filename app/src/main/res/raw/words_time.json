@@ -1,0 +1,36 @@
+{
+  "chapter": 10,
+  "title": "시간",
+  "items": [
+    { "id": 1, "sinhala": "ඊයේ", "ipa": "īye", "meaning": "어제" },
+    { "id": 2, "sinhala": "අද", "ipa": "ada", "meaning": "오늘" },
+    { "id": 3, "sinhala": "හෙට", "ipa": "heṭa", "meaning": "내일" },
+    { "id": 4, "sinhala": "පෙරේදා", "ipa": "perēdā", "meaning": "그저께" },
+    { "id": 5, "sinhala": "අනිද්දා", "ipa": "aniddā", "meaning": "모레" },
+
+    { "id": 6, "sinhala": "ගිය සතියේ", "ipa": "giya satiyē", "meaning": "지난 주" },
+    { "id": 7, "sinhala": "මේ සතියේ", "ipa": "mē satiyē", "meaning": "이번 주" },
+    { "id": 8, "sinhala": "ලබන සතියේ", "ipa": "labana satiyē", "meaning": "다음 주" },
+
+    { "id": 9, "sinhala": "තත්පරය", "ipa": "tatparaya", "meaning": "초" },
+    { "id": 10, "sinhala": "විනාඩිය", "ipa": "vināḍiya", "meaning": "분" },
+    { "id": 11, "sinhala": "පැය", "ipa": "pæya", "meaning": "시(時)" },
+    { "id": 12, "sinhala": "දවස", "ipa": "davasa", "meaning": "일(日)" },
+    { "id": 13, "sinhala": "සතිය", "ipa": "satiya", "meaning": "주(週)" },
+    { "id": 14, "sinhala": "මාසය", "ipa": "māsaya", "meaning": "월(月)" },
+    { "id": 15, "sinhala": "අවුරුද්ද", "ipa": "avurudda", "meaning": "년(年)" },
+
+    { "id": 16, "sinhala": "එකයි", "ipa": "ekayi", "meaning": "1시" },
+    { "id": 17, "sinhala": "දෙකයි දහයයි", "ipa": "dekayi dahayayi", "meaning": "2시 10분" },
+    { "id": 18, "sinhala": "තුනයි පහළොස්", "ipa": "tunayi pahalos", "meaning": "3시 15분" },
+    { "id": 19, "sinhala": "හතරයි භාගයි", "ipa": "hatarayi bhāgayi", "meaning": "4시 반" },
+    { "id": 20, "sinhala": "පහයි හතළිහයි", "ipa": "pahayi hathaliheyi", "meaning": "5시 40분" },
+    { "id": 21, "sinhala": "හයයි පනස් පහයි", "ipa": "hayayi panas pahayayi", "meaning": "6시 55분" },
+
+    { "id": 22, "sinhala": "අලුයම", "ipa": "aluyama", "meaning": "새벽" },
+    { "id": 23, "sinhala": "උදේ", "ipa": "udē", "meaning": "아침" },
+    { "id": 24, "sinhala": "දවල්", "ipa": "daval", "meaning": "점심 / 낮" },
+    { "id": 25, "sinhala": "හවස", "ipa": "havasa", "meaning": "오후 / 저녁" },
+    { "id": 26, "sinhala": "රෑ", "ipa": "ræ", "meaning": "밤" }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "chapter": 6,
+  "title": "기초 형용사 2",
+  "items": [
+    { "id": 1, "sinhala": "සම්පූර්ණ", "meaning": "완전한", "ipa": "/sampuːrɳa/" },
+    { "id": 2, "sinhala": "පොඩි", "meaning": "작은", "ipa": "/podi/" },
+    { "id": 3, "sinhala": "නිශ්ශබ්ද", "meaning": "조용한", "ipa": "/niʃʃabd̪a/" },
+    { "id": 4, "sinhala": "කොට", "meaning": "짧은", "ipa": "/koʈa/" },
+    { "id": 5, "sinhala": "ලොකු", "meaning": "큰", "ipa": "/loku/" },
+
+    { "id": 6, "sinhala": "දුප්පත්", "meaning": "가난한", "ipa": "/dupːat̪/" },
+    { "id": 7, "sinhala": "සරල", "meaning": "간단한", "ipa": "/sarala/" },
+    { "id": 8, "sinhala": "ගොරෝසු", "meaning": "거친", "ipa": "/ɡoroːsu/" },
+    { "id": 9, "sinhala": "පැහැදිලි", "meaning": "깔끔한", "ipa": "/pæhəd̪ili/" },
+    { "id": 10, "sinhala": "තද", "meaning": "꽉 끼는", "ipa": "/t̪ad̪a/" },
+
+    { "id": 11, "sinhala": "පහළ", "meaning": "낮은", "ipa": "/pahaɭa/" },
+    { "id": 12, "sinhala": "උස", "meaning": "높은", "ipa": "/usa/" },
+    { "id": 13, "sinhala": "අපිරිසිදු", "meaning": "더러운", "ipa": "/apirisidu/" },
+    { "id": 14, "sinhala": "මහත", "meaning": "뚱뚱한", "ipa": "/mahət̪a/" },
+    { "id": 15, "sinhala": "රස්නේ", "meaning": "더운", "ipa": "/rasneː/" },
+
+    { "id": 16, "sinhala": "පොද", "meaning": "명확한", "ipa": "/pod̪a/" },
+    { "id": 17, "sinhala": "බර", "meaning": "무거운", "ipa": "/bara/" },
+    { "id": 18, "sinhala": "සමාන", "meaning": "비슷한", "ipa": "/samaːna/" },
+    { "id": 19, "sinhala": "කෙට්ටු", "meaning": "빼빼한", "ipa": "/keʈʈu/" },
+    { "id": 20, "sinhala": "අලුත්", "meaning": "새로운", "ipa": "/alut̪/" }
+  ]
+}

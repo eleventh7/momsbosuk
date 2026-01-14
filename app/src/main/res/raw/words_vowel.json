@@ -1,0 +1,27 @@
+{
+  "chapter": 1,
+  "title": "싱할라 모음",
+  "slot": "◌",
+  "items": [
+    { "id": 1,  "sinhala": "අ", "ipa": "a",   "meaning": "아 , ex: ◌" },
+    { "id": 2,  "sinhala": "ආ", "ipa": "aː", "meaning": "아- , ex: ◌ා" },
+
+    { "id": 3,  "sinhala": "ඇ", "ipa": "æ",   "meaning": "애 , ex: ◌ැ" },
+    { "id": 4,  "sinhala": "ඈ", "ipa": "æː", "meaning": "애- , ex: ◌ෑ" },
+
+    { "id": 5,  "sinhala": "ඉ", "ipa": "i",   "meaning": "이 , ex: ◌ි" },
+    { "id": 6,  "sinhala": "ඊ", "ipa": "iː", "meaning": "이- , ex: ◌ී" },
+
+    { "id": 7,  "sinhala": "උ", "ipa": "u",   "meaning": "우 , ex: ◌ු" },
+    { "id": 8,  "sinhala": "ඌ", "ipa": "uː", "meaning": "우- , ex: ◌ූ" },
+
+    { "id": 9,  "sinhala": "එ", "ipa": "e",   "meaning": "에 , ex: ◌ෙ" },
+    { "id": 10, "sinhala": "ඒ", "ipa": "eː", "meaning": "에- , ex: ◌ේ" },
+
+    { "id": 11, "sinhala": "ඔ", "ipa": "o",   "meaning": "오 , ex: ◌ො" },
+    { "id": 12, "sinhala": "ඕ", "ipa": "oː", "meaning": "오- , ex: ◌ෝ" },
+
+    { "id": 13, "sinhala": "ඓ", "ipa": "ai̯", "meaning": "아이 , ex: ◌ෛ" },
+    { "id": 14, "sinhala": "ඖ", "ipa": "au̯", "meaning": "아우 , ex: ◌ෞ" }
+  ]
+}

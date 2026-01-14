@@ -1,0 +1,36 @@
+{
+  "chapter": 3,
+  "title": "기초 동사",
+  "items": [
+    { "id": 1, "sinhala": "එනවා", "meaning": "오다", "ipa": "/enavā/" },
+    { "id": 2, "sinhala": "ආවා", "meaning": "왔다", "ipa": "/āwā/" },
+
+    { "id": 3, "sinhala": "යනවා", "meaning": "가다", "ipa": "/yanavā/" },
+    { "id": 4, "sinhala": "ගියා", "meaning": "갔다", "ipa": "/giyā/" },
+
+    { "id": 5, "sinhala": "කනවා", "meaning": "먹다", "ipa": "/kanavā/" },
+    { "id": 6, "sinhala": "කෑවා", "meaning": "먹었다", "ipa": "/kǣvā/" },
+
+    { "id": 7, "sinhala": "දෙනවා", "meaning": "주다", "ipa": "/denavā/" },
+    { "id": 8, "sinhala": "දුන්නා", "meaning": "주었다", "ipa": "/dunnā/" },
+
+    { "id": 9, "sinhala": "ගන්නවා", "meaning": "받다", "ipa": "/gannavā/" },
+    { "id": 10, "sinhala": "ගත්තා", "meaning": "받았다", "ipa": "/gattā/" },
+
+    { "id": 11, "sinhala": "බොනවා", "meaning": "마시다", "ipa": "/bonavā/" },
+    { "id": 12, "sinhala": "බීවා", "meaning": "마셨다", "ipa": "/bīwā/" },
+
+    { "id": 13, "sinhala": "වෙනවා", "meaning": "되다", "ipa": "/wenavā/" },
+    { "id": 14, "sinhala": "වුනා", "meaning": "되었다", "ipa": "/wunā/" },
+
+    { "id": 15, "sinhala": "කරනවා", "meaning": "하다", "ipa": "/karanavā/" },
+    { "id": 16, "sinhala": "කළා", "meaning": "했다", "ipa": "/kalā/" },
+
+    { "id": 17, "sinhala": "ගන්නවා", "meaning": "사다", "ipa": "/gannavā/" },
+    { "id": 18, "sinhala": "ගත්තා", "meaning": "샀다", "ipa": "/gattā/" },
+
+    { "id": 19, "sinhala": "ඇති", "meaning": "있다(사람)", "ipa": "/æti/" },
+    { "id": 20, "sinhala": "සිටියා", "meaning": "있었다(사람)", "ipa": "/siṭiyā/" }
+
+  ]
+}
