@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.sp
 import com.eleventh.momsbosuk.R
 import com.eleventh.momsbosuk.data.loadChapterFromRawSafe
 import com.eleventh.momsbosuk.ui.components.WordRow
+import com.eleventh.momsbosuk.ui.components.WordRowHangul
 import org.json.JSONObject
 import androidx.activity.compose.BackHandler
 import android.util.Log
@@ -29,6 +30,7 @@ fun ChapterWordsScreen() {
     // 선택 전: null → 목록, 선택 후: 상세
     var selected by rememberSaveable { mutableStateOf<CategorySpec?>(null) }
     var showExitDialog by rememberSaveable { mutableStateOf(false) }
+    var isHangulMode by rememberSaveable { mutableStateOf(false) }
 
     // ✅ 상세 화면이면: 시스템 뒤로 -> 목록으로
     BackHandler(enabled = selected != null) {
@@ -65,8 +67,10 @@ fun ChapterWordsScreen() {
     } else {
         ChapterWordsDetailScreen(
             category = selected!!,
+            isHangulMode = isHangulMode,
             onToggle = {
-                Log.d("ChapterWords", "onToggle 호출됨 (아직 기능 없음)")
+                //Log.d("ChapterWords", "onToggle 호출됨 (아직 기능 없음)")
+                isHangulMode = !isHangulMode
             }
         )
     }
@@ -132,6 +136,7 @@ private fun ChapterWordsListScreen(
 @Composable
 private fun ChapterWordsDetailScreen(
     category: CategorySpec,
+    isHangulMode: Boolean,
     onToggle: () -> Unit
 ) {
     val ctx = LocalContext.current
@@ -164,7 +169,7 @@ private fun ChapterWordsDetailScreen(
                         TextButton(onClick = {
                             Log.d("ChapterWords", "한글로 버튼 클릭")
                             onToggle()
-                        }) { Text("한글로") }
+                        }) { Text(if (isHangulMode) "සිංහලෙන්" else "한글로"  ) }
                         TextButton(onClick = { showMeaning = !showMeaning }) {
                             Text(if (showMeaning) "뜻 숨기기" else "뜻 보기")
                         }
@@ -209,13 +214,23 @@ private fun ChapterWordsDetailScreen(
                 ) {
                     items(payload.items, key = { it.id }) { item ->
                         val isExpanded = expandedMap[item.id] == true
-                        WordRow(
-                            item = item,
-                            expanded = isExpanded,
-                            onToggle = { expandedMap[item.id] = !isExpanded },
-                            wordFontSize = wordFontSize,
-                            showMeaning = showMeaning
-                        )
+                        if (isHangulMode) {
+                            WordRowHangul(
+                                item = item,
+                                expanded = isExpanded,
+                                onToggle = { expandedMap[item.id] = !isExpanded },
+                                wordFontSize = wordFontSize,
+                                showMeaning = showMeaning
+                            )
+                        } else {
+                            WordRow(
+                                item = item,
+                                expanded = isExpanded,
+                                onToggle = { expandedMap[item.id] = !isExpanded },
+                                wordFontSize = wordFontSize,
+                                showMeaning = showMeaning
+                            )
+                        }
                     }
                 }
             },
