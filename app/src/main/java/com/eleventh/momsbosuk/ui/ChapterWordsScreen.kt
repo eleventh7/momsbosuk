@@ -20,7 +20,14 @@ import com.eleventh.momsbosuk.ui.components.WordRowHangul
 import org.json.JSONObject
 import androidx.activity.compose.BackHandler
 import android.util.Log
-import android.app.Activity
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Remove
+import androidx.compose.material.icons.filled.Shuffle
+import androidx.compose.material.icons.filled.Subway
+
+
 
 @Composable
 fun ChapterWordsScreen(onExitApp: () -> Unit) {
@@ -143,6 +150,7 @@ private fun ChapterWordsDetailScreen(
     // 뜻 보기 토글
     var showMeaning by remember { mutableStateOf(false) }
     val expandedMap = remember { mutableStateMapOf<Int, Boolean>() } // WordItem.id가 Int면 그대로 OK
+    var isShuffled by remember { mutableStateOf(false) }
 
     LaunchedEffect(showMeaning) {
         if (!showMeaning) expandedMap.clear()
@@ -162,7 +170,7 @@ private fun ChapterWordsDetailScreen(
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(category.title) },
+                title = { Text(category.title, maxLines = 1) },
                 navigationIcon = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         TextButton(onClick = {
@@ -175,15 +183,59 @@ private fun ChapterWordsDetailScreen(
                     }
                 },
                 actions = {
-                    TextButton(
-                        onClick = { if (wordFontSize > minSize) wordFontSize -= step },
-                        enabled = wordFontSize > minSize
-                    ) { Text("–", fontSize = 22.sp) }
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(3.dp)
+                    ) {
+//                        TextButton(
+//                            onClick = { if (wordFontSize > minSize) wordFontSize -= step },
+//                            enabled = wordFontSize > minSize
+//                        ) { Text("–", fontSize = 20.sp) }
+//
+//                        TextButton(
+//                            onClick = { if (wordFontSize < maxSize) wordFontSize += step },
+//                            enabled = wordFontSize < maxSize
+//                        ) { Text("+", fontSize = 20.sp) }
 
-                    TextButton(
-                        onClick = { if (wordFontSize < maxSize) wordFontSize += step },
-                        enabled = wordFontSize < maxSize
-                    ) { Text("+", fontSize = 22.sp) }
+                        IconButton(
+                            onClick = { if (wordFontSize > minSize) wordFontSize -= step },
+                            enabled = wordFontSize > minSize
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Remove,
+                                contentDescription = "-",
+                                tint = MaterialTheme.colorScheme.tertiary
+
+                            )
+                        }
+
+                        IconButton(
+                            onClick = { if (wordFontSize < maxSize) wordFontSize += step },
+                            enabled = wordFontSize < maxSize
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Add,
+                                contentDescription = "+",
+                                tint = MaterialTheme.colorScheme.tertiary
+                            )
+                        }
+
+                        IconButton(
+                            onClick = {
+                                isShuffled = !isShuffled
+                            }
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Shuffle,
+                                contentDescription = "순서 섞기",
+                                tint = if (isShuffled)
+                                    MaterialTheme.colorScheme.onSurface
+                                else
+                                    MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+
                 }
             )
         }

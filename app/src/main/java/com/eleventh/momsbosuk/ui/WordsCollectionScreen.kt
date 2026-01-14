@@ -21,6 +21,10 @@ import org.json.JSONObject
 import androidx.activity.compose.BackHandler
 import android.util.Log
 import android.app.Activity
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Remove
+import androidx.compose.material.icons.filled.Shuffle
 import com.eleventh.momsbosuk.ui.components.WordRowHangul
 
 
@@ -154,6 +158,7 @@ private fun CategoryDetailScreen(
     // 뜻 보기 토글 (ChapterWordsScreen 패턴 재사용)
     var showMeaning by remember { mutableStateOf(false) }
     val expandedMap = remember { mutableStateMapOf<Int, Boolean>() }
+    var isShuffled by remember { mutableStateOf(false) }
 
     LaunchedEffect(showMeaning) {
         if (!showMeaning) expandedMap.clear()
@@ -187,15 +192,52 @@ private fun CategoryDetailScreen(
                     }
                 },
                 actions = {
-                    TextButton(
+//                    TextButton(
+//                        onClick = { if (wordFontSize > minSize) wordFontSize -= step },
+//                        enabled = wordFontSize > minSize
+//                    ) { Text("–", fontSize = 22.sp) }
+//
+//                    TextButton(
+//                        onClick = { if (wordFontSize < maxSize) wordFontSize += step },
+//                        enabled = wordFontSize < maxSize
+//                    ) { Text("+", fontSize = 22.sp) }
+                    IconButton(
                         onClick = { if (wordFontSize > minSize) wordFontSize -= step },
                         enabled = wordFontSize > minSize
-                    ) { Text("–", fontSize = 22.sp) }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Remove,
+                            contentDescription = "-",
+                            tint = MaterialTheme.colorScheme.tertiary
 
-                    TextButton(
+                        )
+                    }
+
+                    IconButton(
                         onClick = { if (wordFontSize < maxSize) wordFontSize += step },
                         enabled = wordFontSize < maxSize
-                    ) { Text("+", fontSize = 22.sp) }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Add,
+                            contentDescription = "+",
+                            tint = MaterialTheme.colorScheme.tertiary
+                        )
+                    }
+
+                    IconButton(
+                        onClick = {
+                            isShuffled = !isShuffled
+                        }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Shuffle,
+                            contentDescription = "순서 섞기",
+                            tint = if (isShuffled)
+                                MaterialTheme.colorScheme.onSurface
+                            else
+                                MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
                 }
             )
         }
