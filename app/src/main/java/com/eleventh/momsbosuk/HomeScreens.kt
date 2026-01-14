@@ -12,7 +12,9 @@ import com.eleventh.momsbosuk.ui.ChapterSentencesScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MomsBosukApp() {
+fun MomsBosukApp(
+    onExitApp: () -> Unit
+) {
     var selectedTab by rememberSaveable { mutableStateOf(MainTab.COLLECTIONS) }
 
     Scaffold(
@@ -29,9 +31,9 @@ fun MomsBosukApp() {
                 }
             }
             when (selectedTab) {
-                MainTab.COLLECTIONS      -> WordsCollectionScreen()
-                MainTab.PERIOD_WORDS     -> ChapterWordsScreen()       // n은 여기서 고름
-                MainTab.PERIOD_SENTENCES -> ChapterSentencesScreen()
+                MainTab.COLLECTIONS      -> WordsCollectionScreen(onExitApp = onExitApp)
+                MainTab.PERIOD_WORDS     -> ChapterWordsScreen(onExitApp = onExitApp)
+                MainTab.PERIOD_SENTENCES -> ChapterSentencesScreen(onExitApp = onExitApp)
             }
         }
     }

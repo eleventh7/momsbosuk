@@ -33,7 +33,12 @@ class MainActivity : ComponentActivity() {
                         authorized = true
                     })
                 } else {
-                    MomsBosukApp()
+                    MomsBosukApp(
+                        onExitApp = {
+                            prefs.edit().putBoolean("authorized", false).apply()
+                            finish()
+                        }
+                    )
                 }
 
             }

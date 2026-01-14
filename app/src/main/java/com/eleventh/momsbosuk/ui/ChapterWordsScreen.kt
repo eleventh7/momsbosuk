@@ -23,23 +23,22 @@ import android.util.Log
 import android.app.Activity
 
 @Composable
-fun ChapterWordsScreen() {
+fun ChapterWordsScreen(onExitApp: () -> Unit) {
     val ctx = LocalContext.current
-    val activity = ctx as? Activity
 
     // 선택 전: null → 목록, 선택 후: 상세
     var selected by rememberSaveable { mutableStateOf<CategorySpec?>(null) }
     var showExitDialog by rememberSaveable { mutableStateOf(false) }
     var isHangulMode by rememberSaveable { mutableStateOf(false) }
 
-    // ✅ 상세 화면이면: 시스템 뒤로 -> 목록으로
-    BackHandler(enabled = selected != null) {
-        selected = null
-    }
-
-    // ✅ 목록 화면이면: 시스템 뒤로 -> 종료 확인
-    BackHandler(enabled = selected == null) {
-        showExitDialog = true
+    // ✅ 시스템 뒤로: 상세면 목록으로, 목록이면 종료 다이얼로그
+    BackHandler {
+        if (selected != null) {
+            showExitDialog = false
+            selected = null
+        } else {
+            showExitDialog = true
+        }
     }
 
     if (showExitDialog) {
@@ -50,7 +49,7 @@ fun ChapterWordsScreen() {
             confirmButton = {
                 TextButton(onClick = {
                     showExitDialog = false
-                    activity?.finish()
+                    onExitApp()
                 }) { Text("종료") }
             },
             dismissButton = {
