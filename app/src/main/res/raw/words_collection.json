@@ -1,14 +1,20 @@
 {
-  "chapter": 0,
-  "title": "단어 모음",
-  "items": [
+  "version": 1,
+  "categories": [
     {
-      "id": 1,
-      "sinhala": "දෙව්වා",
-      "word": "하나님",
-      "ipa": "ˈhananim",
-      "written": "하나님",
-      "spoken": "하나님"
+      "id": "ch1_1",
+      "title": "1 교시단어 1",
+      "source": "words_ch1_1"
+    },
+    {
+      "id": "ch1_2",
+      "title": "1 교시단어 2",
+      "source": "words_ch1_2"
+    },
+    {
+      "id": "ch2",
+      "title": "2 교시단어",
+      "source": "words_ch2"
     }
   ]
 }

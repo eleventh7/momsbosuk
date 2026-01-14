@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ChapterPayload(
-    val chapter: Int,
+    val chapter: String,
     val title: String,
     val items: List<WordItem>
 )

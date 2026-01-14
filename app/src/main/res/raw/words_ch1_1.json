@@ -1,6 +1,6 @@
 {
-  "chapter": "ch2",
-  "title": "2 교시단어 ",
+  "chapter": "ch1_1",
+  "title": "1 교시단어 1",
   "items": [
     { "id": 1, "sinhala": "පස්වත", "meaning": "흙, 먼지", "ipa": "/pasʋaθa/" },
     { "id": 2, "sinhala": "රහස්", "meaning": "비밀", "ipa": "/rahas/" },

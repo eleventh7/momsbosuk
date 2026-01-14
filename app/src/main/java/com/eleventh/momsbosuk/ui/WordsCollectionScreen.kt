@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -17,6 +18,9 @@ import com.eleventh.momsbosuk.R
 import com.eleventh.momsbosuk.data.loadChapterFromRawSafe
 import com.eleventh.momsbosuk.ui.components.WordRow
 import org.json.JSONObject
+import androidx.activity.compose.BackHandler
+import android.util.Log
+import android.app.Activity
 
 
 /* ------------------ 모델 ------------------ *
@@ -32,9 +36,38 @@ data class CategorySpec(
 @Composable
 fun WordsCollectionScreen() {
     val ctx = LocalContext.current
+    val activity = ctx as? Activity
 
     // 선택 전: null → 카테고리 목록, 선택 후: 상세
-    var selected by remember { mutableStateOf<CategorySpec?>(null) }
+    var selected by rememberSaveable  { mutableStateOf<CategorySpec?>(null) }
+    var showExitDialog by rememberSaveable { mutableStateOf(false) }
+
+    // ✅ 상세 화면이면: 시스템 뒤로 -> 목록으로
+    BackHandler(enabled = selected != null) {
+        selected = null
+    }
+
+    // ✅ 목록 화면이면: 시스템 뒤로 -> 종료 확인
+    BackHandler(enabled = selected == null) {
+        showExitDialog = true
+    }
+
+    if (showExitDialog) {
+        AlertDialog(
+            onDismissRequest = { showExitDialog = false },
+            title = { Text("앱 종료") },
+            text = { Text("종료하시겠습니까?") },
+            confirmButton = {
+                TextButton(onClick = {
+                    showExitDialog = false
+                    activity?.finish()
+                }) { Text("종료") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showExitDialog = false }) { Text("취소") }
+            }
+        )
+    }
 
     if (selected == null) {
         CategoriesListScreen(
@@ -44,7 +77,9 @@ fun WordsCollectionScreen() {
     } else {
         CategoryDetailScreen(
             category = selected!!,
-            onBack = { selected = null }
+            onToggle = {
+                Log.d("ChapterWords", "onToggle 호출됨 (아직 기능 없음)")
+            }
         )
     }
 }
@@ -108,7 +143,7 @@ private fun CategoriesListScreen(
 @Composable
 private fun CategoryDetailScreen(
     category: CategorySpec,
-    onBack: () -> Unit
+    onToggle: () -> Unit
 ) {
     val ctx = LocalContext.current
 
@@ -138,7 +173,10 @@ private fun CategoryDetailScreen(
                 title = { Text(category.title) },
                 navigationIcon = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        TextButton(onClick = onBack) { Text("뒤로") }
+                        TextButton(onClick = {
+                            Log.d("ChapterWords", "한글로 버튼 클릭")
+                            onToggle()
+                        }) { Text("한글로") }
                         TextButton(onClick = { showMeaning = !showMeaning }) {
                             Text(if (showMeaning) "뜻 숨기기" else "뜻 보기")
                         }

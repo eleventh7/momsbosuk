@@ -1,0 +1,34 @@
+{
+  "chapter": "ch1_2",
+  "title": "1 교시단어 2",
+  "items": [
+    { "id": 26, "sinhala": "භූමිය", "meaning": "땅", "ipa": "/bʱuːmija/" },
+    { "id": 27, "sinhala": "අත්‍යවශ්‍ය", "meaning": "필수적인", "ipa": "/at̪jawaʂja/" },
+    { "id": 28, "sinhala": "දේවදූතයා", "meaning": "천사", "ipa": "/deːʋəduːt̪əjaː/" },
+    { "id": 29, "sinhala": "පැමිණියා", "meaning": "나타나다", "ipa": "/pæmiɳijaː/" },
+    { "id": 30, "sinhala": "ඇයි", "meaning": "왜?", "ipa": "/æj/" },
+    { "id": 31, "sinhala": "එසේනම්", "meaning": "그러면", "ipa": "/eseːnəm/" },
+    { "id": 32, "sinhala": "ඉගැන්වීම", "meaning": "가르침", "ipa": "/iɡænʋiːm/" },
+    { "id": 33, "sinhala": "යේසුස්වහන්සේ", "meaning": "예수님", "ipa": "/jeːsusʋəhənseː/" },
+    { "id": 34, "sinhala": "යේසුස්වහන්සේගේ", "meaning": "예수님의", "ipa": "/jeːsusʋəhənseːɡeː/" },
+    { "id": 35, "sinhala": "යේසුස්වහන්සේට", "meaning": "예수님께", "ipa": "/jeːsusʋəhənseːʈə/" },
+    { "id": 36, "sinhala": "යේසුස්වහන්සේගෙන්", "meaning": "예수님을 통해", "ipa": "/jeːsusʋəhənseːɡen/" },
+    { "id": 37, "sinhala": "යේසුස්වහන්සේව", "meaning": "예수님을", "ipa": "/jeːsusʋəhənseːʋə/" },
+    { "id": 38, "sinhala": "නිරූපනය", "meaning": "표상하다", "ipa": "/niruːpənəja/" },
+    { "id": 39, "sinhala": "පිළිතුර", "meaning": "정답", "ipa": "/piɭit̪urə/" },
+    { "id": 40, "sinhala": "සොයා බලමු", "meaning": "살펴보자", "ipa": "/sojaː bəl̪əmu/" },
+
+    { "id": 41, "sinhala": "මරණය", "meaning": "죽음", "ipa": "/mərəɳəja/" },
+    { "id": 42, "sinhala": "නැවත", "meaning": "다시", "ipa": "/næʋət̪ə/" },
+    { "id": 43, "sinhala": "පාස්කු", "meaning": "유월절", "ipa": "/paːsku/" },
+    { "id": 44, "sinhala": "රක්ෂා කරනවා", "meaning": "지키다", "ipa": "/rəkʂaː kərənəʋaː/" },
+    { "id": 45, "sinhala": "පොරොන්දුව", "meaning": "약속", "ipa": "/porond̪uʋə/" },
+    { "id": 46, "sinhala": "සත්‍යය", "meaning": "진리", "ipa": "/sət̪jəjə/" },
+    { "id": 47, "sinhala": "වෙනුවෙන්", "meaning": "~위해서", "ipa": "/ʋenuʋen/" },
+    { "id": 48, "sinhala": "සාලමොන්", "meaning": "솔로몬", "ipa": "/saːləmɔn/" },
+    { "id": 49, "sinhala": "යෝබ්", "meaning": "욥", "ipa": "/joːb/" },
+    { "id": 50, "sinhala": "ශරීරය", "meaning": "육체", "ipa": "/ʃəriːrəja/" },
+    { "id": 51, "sinhala": "තේරුම", "meaning": "의미", "ipa": "/t̪eːrumə/" }
+
+  ]
+}

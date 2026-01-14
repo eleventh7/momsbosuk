@@ -1,5 +1,5 @@
 {
-  "chapter": 2,
+  "chapter": "consonant_1",
   "title": "싱할라 자음",
   "items": [
     { "id": 1,  "sinhala": "ක", "ipa": "ka",   "meaning": "까" },

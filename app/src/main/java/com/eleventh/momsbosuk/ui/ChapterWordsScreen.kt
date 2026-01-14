@@ -1,135 +1,183 @@
 package com.eleventh.momsbosuk.ui
 
 import android.content.Context
-import androidx.annotation.RawRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.eleventh.momsbosuk.R
-import com.eleventh.momsbosuk.data.loadChapterFromRaw
 import com.eleventh.momsbosuk.data.loadChapterFromRawSafe
 import com.eleventh.momsbosuk.ui.components.WordRow
-import androidx.compose.material3.HorizontalDivider
-
+import org.json.JSONObject
+import androidx.activity.compose.BackHandler
+import android.util.Log
+import android.app.Activity
 
 @Composable
 fun ChapterWordsScreen() {
     val ctx = LocalContext.current
-    // 선택 전: null → 챕터 목록, 선택 후: 상세
-    var selectedChapter by remember { mutableStateOf<Int?>(null) }
+    val activity = ctx as? Activity
 
-    if (selectedChapter == null) {
-        ChapterListScreen(
-            chapters = remember { availableWordChapters(ctx, max = 30) },
-            onOpen = { selectedChapter = it }
+    // 선택 전: null → 목록, 선택 후: 상세
+    var selected by rememberSaveable { mutableStateOf<CategorySpec?>(null) }
+    var showExitDialog by rememberSaveable { mutableStateOf(false) }
+
+    // ✅ 상세 화면이면: 시스템 뒤로 -> 목록으로
+    BackHandler(enabled = selected != null) {
+        selected = null
+    }
+
+    // ✅ 목록 화면이면: 시스템 뒤로 -> 종료 확인
+    BackHandler(enabled = selected == null) {
+        showExitDialog = true
+    }
+
+    if (showExitDialog) {
+        AlertDialog(
+            onDismissRequest = { showExitDialog = false },
+            title = { Text("앱 종료") },
+            text = { Text("종료하시겠습니까?") },
+            confirmButton = {
+                TextButton(onClick = {
+                    showExitDialog = false
+                    activity?.finish()
+                }) { Text("종료") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showExitDialog = false }) { Text("취소") }
+            }
+        )
+    }
+
+    if (selected == null) {
+        ChapterWordsListScreen(
+            categories = remember { availableWordChaptersFromCollection(ctx) },
+            onOpen = { selected = it }
         )
     } else {
-        ChapterDetailScreen(
-            chapter = selectedChapter!!,
-            onBack = { selectedChapter = null }
+        ChapterWordsDetailScreen(
+            category = selected!!,
+            onBack = { selected = null },
+            onToggle = {
+                Log.d("ChapterWords", "onToggle 호출됨 (아직 기능 없음)")
+            }
         )
     }
 }
 
-/* ---------- A. 챕터 목록 ---------- */
+/* ------------------ A. 목록(교시 단어) ------------------ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ChapterListScreen(
-    chapters: List<Int>,
-    onOpen: (Int) -> Unit
+private fun ChapterWordsListScreen(
+    categories: List<CategorySpec>,
+    onOpen: (CategorySpec) -> Unit
 ) {
     Scaffold(
         topBar = { CenterAlignedTopAppBar(title = { Text("n교시 단어") }) }
     ) { inner ->
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(inner),
-            contentPadding = PaddingValues(vertical = 8.dp)
-        ) {
-            items(chapters) { ch ->
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onOpen(ch) }
-                        .padding(horizontal = 16.dp, vertical = 14.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text("${ch} 교시", fontSize = 18.sp, modifier = Modifier.weight(1f))
-                    Button(
-                        onClick = { onOpen(ch) },
-                        shape = MaterialTheme.shapes.small,
-                        contentPadding = PaddingValues(horizontal = 18.dp, vertical = 4.dp)
-                    ) { Text("보기", fontSize = 14.sp) }
-                }
-                HorizontalDivider(
-                    modifier = Modifier.padding(horizontal = 16.dp),
-                    thickness = 1.dp,
-                    color = MaterialTheme.colorScheme.outlineVariant
+        if (categories.isEmpty()) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(inner),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    "표시할 교시 단어가 없습니다.\n(words_collection.json / raw 파일 이름 확인)",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
-
+            }
+        } else {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(inner),
+                contentPadding = PaddingValues(vertical = 8.dp)
+            ) {
+                items(categories, key = { it.id }) { cat ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { onOpen(cat) }
+                            .padding(horizontal = 16.dp, vertical = 14.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(cat.title, fontSize = 18.sp, modifier = Modifier.weight(1f))
+                        Button(
+                            onClick = { onOpen(cat) },
+                            shape = MaterialTheme.shapes.small,
+                            contentPadding = PaddingValues(horizontal = 18.dp, vertical = 4.dp)
+                        ) { Text("보기", fontSize = 14.sp) }
+                    }
+                    HorizontalDivider(
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        thickness = 1.dp,
+                        color = MaterialTheme.colorScheme.outlineVariant
+                    )
+                }
             }
         }
     }
 }
 
-/* ---------- B. 챕터 상세(단어 리스트) ---------- */
+/* ------------------ B. 상세(단어 리스트) ------------------ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ChapterDetailScreen(
-    chapter: Int,
-    onBack: () -> Unit
+private fun ChapterWordsDetailScreen(
+    category: CategorySpec,
+    onBack: () -> Unit,
+    onToggle: () -> Unit
 ) {
+    val ctx = LocalContext.current
 
-
+    // 뜻 보기 토글
     var showMeaning by remember { mutableStateOf(false) }
-    val expandedMap = remember { mutableStateMapOf<Int, Boolean>() }
+    val expandedMap = remember { mutableStateMapOf<Int, Boolean>() } // WordItem.id가 Int면 그대로 OK
 
     LaunchedEffect(showMeaning) {
         if (!showMeaning) expandedMap.clear()
     }
 
-
-    val ctx = LocalContext.current
-    val resId = remember(chapter) { resIdForChapter(chapter) }
-    val result = remember(resId) { loadChapterFromRawSafe(ctx, resId) }
-
-    //  글자 크기 상태 (단어 리스트에 적용)
-    var wordFontSize by remember { mutableStateOf(26) }   // 기본 26sp
+    // 글자 크기
+    var wordFontSize by remember { mutableStateOf(26) }
     val minSize = 16
     val maxSize = 48
     val step = 2
 
+    val resId = remember(category.source) {
+        ctx.resources.getIdentifier(category.source, "raw", ctx.packageName)
+    }
+    val result = remember(resId) { loadChapterFromRawSafe(ctx, resId) }
+
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text("${chapter} 교시") },
+                title = { Text(category.title) },
                 navigationIcon = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        TextButton(onClick = onBack) { Text("뒤로") }
-
+                        TextButton(onClick = {
+                            Log.d("ChapterWords", "한글로 버튼 클릭")
+                            onToggle()
+                        }) { Text("한글로") }
                         TextButton(onClick = { showMeaning = !showMeaning }) {
                             Text(if (showMeaning) "뜻 숨기기" else "뜻 보기")
                         }
                     }
                 },
                 actions = {
-
-                    //  - 버튼
                     TextButton(
                         onClick = { if (wordFontSize > minSize) wordFontSize -= step },
                         enabled = wordFontSize > minSize
                     ) { Text("–", fontSize = 22.sp) }
 
-                    //  + 버튼
                     TextButton(
                         onClick = { if (wordFontSize < maxSize) wordFontSize += step },
                         enabled = wordFontSize < maxSize
@@ -138,6 +186,21 @@ private fun ChapterDetailScreen(
             )
         }
     ) { inner ->
+        if (resId == 0) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(inner),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    "raw 파일을 찾을 수 없습니다:\n${category.source}.json",
+                    color = MaterialTheme.colorScheme.error
+                )
+            }
+            return@Scaffold
+        }
+
         result.fold(
             onSuccess = { payload ->
                 LazyColumn(
@@ -148,7 +211,6 @@ private fun ChapterDetailScreen(
                 ) {
                     items(payload.items, key = { it.id }) { item ->
                         val isExpanded = expandedMap[item.id] == true
-
                         WordRow(
                             item = item,
                             expanded = isExpanded,
@@ -166,27 +228,39 @@ private fun ChapterDetailScreen(
                         .padding(inner),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("로딩 실패: ${err.message ?: "알 수 없는 오류"}",
-                        color = MaterialTheme.colorScheme.error)
+                    Text(
+                        "로딩 실패: ${err.message ?: "알 수 없는 오류"}",
+                        color = MaterialTheme.colorScheme.error
+                    )
                 }
             }
         )
     }
 }
 
-/* ---------- 유틸 ---------- */
-private fun availableWordChapters(ctx: Context, max: Int): List<Int> {
+/* ------------------ 유틸: words_collection.json 로드 + 존재하는 raw만 필터 ------------------ */
+private fun availableWordChaptersFromCollection(ctx: Context): List<CategorySpec> {
+    val jsonText = ctx.resources
+        .openRawResource(R.raw.words_collection)
+        .bufferedReader()
+        .use { it.readText() }
+
+    val root = JSONObject(jsonText)
+    val arr = root.getJSONArray("categories")
+
     val res = ctx.resources
     val pkg = ctx.packageName
-    // res/raw/words_ch{n}.json 존재하는 것만 리스트업
-    return (1..max).filter { n ->
-        res.getIdentifier("words_ch$n", "raw", pkg) != 0
-    }
-}
 
-@RawRes
-private fun resIdForChapter(ch: Int): Int = when (ch) {
-    1 -> R.raw.words_ch1
-    2 -> R.raw.words_ch2
-    else -> R.raw.words_ch1
+    val out = ArrayList<CategorySpec>(arr.length())
+    for (i in 0 until arr.length()) {
+        val o = arr.getJSONObject(i)
+        val id = o.getString("id")
+        val title = o.getString("title")
+        val source = o.getString("source")
+
+        // source에 해당하는 raw json이 실제 존재하는 것만 리스트업
+        val exists = res.getIdentifier(source, "raw", pkg) != 0
+        if (exists) out.add(CategorySpec(id = id, title = title, source = source))
+    }
+    return out
 }
