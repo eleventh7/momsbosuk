@@ -1,31 +1,35 @@
 {
   "chapter": "ch2",
-  "title": "2 교시단어 ",
+  "title": "2 교시 단어",
   "items": [
-    { "id": 1, "sinhala": "පස්වත", "meaning": "흙, 먼지", "ipa": "/pasʋaθa/" },
-    { "id": 2, "sinhala": "රහස්", "meaning": "비밀", "ipa": "/rahas/" },
-    { "id": 3, "sinhala": "මනුෂ්‍ය", "meaning": "사람", "ipa": "/manuʂja/" },
-    { "id": 4, "sinhala": "ආත්මය", "meaning": "영혼", "ipa": "/aːt̪maja/" },
-    { "id": 5, "sinhala": "පැමිණිය", "meaning": "나타나다", "ipa": "/pæmini.ja/" },
-    { "id": 6, "sinhala": "දෙවියන්වහන්සේ", "meaning": "하나님", "ipa": "/deʋijanʋahansɛː/" },
-    { "id": 7, "sinhala": "වාචන", "meaning": "말씀", "ipa": "/ʋaːt͡ʃana/" },
-    { "id": 8, "sinhala": "හේතුව", "meaning": "이유", "ipa": "/heːt̪uʋa/" },
-    { "id": 9, "sinhala": "සියලු", "meaning": "모든 것", "ipa": "/sijalu/" },
-    { "id": 10, "sinhala": "බයිබලය", "meaning": "성경", "ipa": "/bajibalaja/" },
-    { "id": 11, "sinhala": "තුළින්", "meaning": "~을 통해서", "ipa": "/t̪ulin/" },
-    { "id": 12, "sinhala": "කරණවා", "meaning": "~하다", "ipa": "/kara.naʋa/" },
-    { "id": 13, "sinhala": "ජීවිතය", "meaning": "생명", "ipa": "/d͡ʒiːʋit̪aja/" },
-    { "id": 14, "sinhala": "දුළි", "meaning": "흙, 먼지", "ipa": "/d̪uɭi/" },
-    { "id": 15, "sinhala": "උත්පාදනය", "meaning": "생기", "ipa": "/ut̪paːdanaja/" },
-    { "id": 16, "sinhala": "එකක්", "meaning": "하나가 되어", "ipa": "/ekak/" },
-    { "id": 17, "sinhala": "ස්ථානය", "meaning": "장소", "ipa": "/st̪aːnaja/" },
-    { "id": 18, "sinhala": "එමනිසා", "meaning": "그러니까", "ipa": "/emanisa/" },
-    { "id": 19, "sinhala": "හරි යනවා", "meaning": "돌아가다", "ipa": "/hari janʋa/" },
-    { "id": 20, "sinhala": "ස්වර්ගය", "meaning": "천국", "ipa": "/sʋarɡaja/" },
-    { "id": 21, "sinhala": "ලෝකය", "meaning": "세상", "ipa": "/loːkaja/" },
-    { "id": 22, "sinhala": "දේවදූතයා", "meaning": "천사", "ipa": "/deːʋaduːt̪aja/" },
-    { "id": 23, "sinhala": "පොළොව", "meaning": "지구, 땅", "ipa": "/poɭoʋa/" },
-    { "id": 24, "sinhala": "පැමිණි", "meaning": "출현", "ipa": "/pæmini/" },
-    { "id": 25, "sinhala": "පෙර", "meaning": "~전에", "ipa": "/pera/" }
+    { "id": 1, "sinhala": "බීම", "ipa": "bīma", "meaning": "음료수" },
+    { "id": 2, "sinhala": "ආහාර", "ipa": "āhāra", "meaning": "음식" },
+    { "id": 3, "sinhala": "පොත", "ipa": "potha", "meaning": "책" },
+    { "id": 4, "sinhala": "කමිස", "ipa": "kamisa", "meaning": "옷" },
+    { "id": 5, "sinhala": "කෝපි", "ipa": "kōpi", "meaning": "커피" },
+    { "id": 6, "sinhala": "වතුර", "ipa": "vathura", "meaning": "물" },
+
+    { "id": 7, "sinhala": "කවදාද?", "ipa": "kavādha?", "meaning": "언제?" },
+    { "id": 8, "sinhala": "කොහෙද?", "ipa": "kohedha?", "meaning": "어디서?" },
+    { "id": 9, "sinhala": "කවුද?", "ipa": "kavudha?", "meaning": "누가?" },
+    { "id": 10, "sinhala": "මොනවාද?", "ipa": "monavādha?", "meaning": "무엇을?" },
+    { "id": 11, "sinhala": "කොහොමද?", "ipa": "kohomadha?", "meaning": "어떻게?" },
+    { "id": 12, "sinhala": "ඇයි?", "ipa": "æyi?", "meaning": "왜?" },
+
+    { "id": 13, "sinhala": "දෙනවා", "ipa": "denavā", "meaning": "주다" },
+    { "id": 14, "sinhala": "දෙමුද?", "ipa": "demudha?", "meaning": "줄까요?" },
+    { "id": 15, "sinhala": "දෙන්න", "ipa": "denna", "meaning": "줘" },
+
+    { "id": 16, "sinhala": "කනවා", "ipa": "kanavā", "meaning": "먹다" },
+    { "id": 17, "sinhala": "කමුද?", "ipa": "kamudha?", "meaning": "먹을까요?" },
+    { "id": 18, "sinhala": "කන්න", "ipa": "kanna", "meaning": "먹어" },
+
+    { "id": 19, "sinhala": "බොනවා", "ipa": "bonavā", "meaning": "마시다" },
+    { "id": 20, "sinhala": "බොමුද?", "ipa": "bomudha?", "meaning": "마실까요?" },
+    { "id": 21, "sinhala": "බොන්න", "ipa": "bonna", "meaning": "마셔" },
+
+    { "id": 22, "sinhala": "අහනවා", "ipa": "ahanavā", "meaning": "묻다" },
+    { "id": 23, "sinhala": "අහමුද?", "ipa": "ahumudha?", "meaning": "물어볼까요?" },
+    { "id": 24, "sinhala": "අහන්න", "ipa": "ahanna", "meaning": "물어봐" }
   ]
 }

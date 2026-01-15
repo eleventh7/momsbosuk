@@ -1,0 +1,21 @@
+{
+  "chapter": "body_1",
+  "title": "신체 표현",
+  "items": [
+    { "id": 1, "sinhala": "කෙස්", "ipa": "kes", "meaning": "머리카락" },
+    { "id": 2, "sinhala": "හිස", "ipa": "hisa", "meaning": "머리" },
+    { "id": 3, "sinhala": "ඇස්", "ipa": "æs", "meaning": "눈" },
+    { "id": 4, "sinhala": "කන්", "ipa": "kan", "meaning": "귀" },
+    { "id": 5, "sinhala": "නාසය", "ipa": "nāsaya", "meaning": "코" },
+    { "id": 6, "sinhala": "කට", "ipa": "kaṭa", "meaning": "입" },
+    { "id": 7, "sinhala": "දිව", "ipa": "diva", "meaning": "혀" },
+    { "id": 8, "sinhala": "බෙල්ල", "ipa": "bella", "meaning": "목" },
+    { "id": 9, "sinhala": "උර", "ipa": "ura", "meaning": "가슴" },
+    { "id": 10, "sinhala": "බඩ", "ipa": "baḍa", "meaning": "배" },
+    { "id": 11, "sinhala": "අත", "ipa": "atha", "meaning": "팔, 손" },
+    { "id": 12, "sinhala": "ඇඟිලි", "ipa": "æṅgili", "meaning": "손가락" },
+    { "id": 13, "sinhala": "කකුල", "ipa": "kakula", "meaning": "다리" },
+    { "id": 14, "sinhala": "පාදය", "ipa": "pādaya", "meaning": "발" },
+    { "id": 15, "sinhala": "තෝල්", "ipa": "thōl", "meaning": "입술" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "chapter": "drink_1",
+  "title": "마실 것",
+  "items": [
+    { "id": 1, "sinhala": "තේ", "ipa": "thē", "meaning": "홍차" },
+    { "id": 2, "sinhala": "වතුර", "ipa": "vathura", "meaning": "물" },
+    { "id": 3, "sinhala": "පැෂන්ෆෘට්", "ipa": "pæshan fruit", "meaning": "포르텔로(포도맛 음료)" },
+    { "id": 4, "sinhala": "කිරි", "ipa": "kiri", "meaning": "우유" },
+    { "id": 5, "sinhala": "තැඹිලි", "ipa": "thæmbili", "meaning": "킹코코넛" },
+
+    { "id": 6, "sinhala": "කළු තේ", "ipa": "kaḷu thē", "meaning": "Plain Tea" },
+    { "id": 7, "sinhala": "කිරි තේ", "ipa": "kiri thē", "meaning": "Milk Tea" },
+    { "id": 8, "sinhala": "පලතුරු බීම", "ipa": "palathuru bīma", "meaning": "과일 주스" },
+    { "id": 9, "sinhala": "කොපි", "ipa": "kopi", "meaning": "커피" },
+
+    { "id": 10, "sinhala": "කෝලා", "ipa": "kōlā", "meaning": "콜라" },
+    { "id": 11, "sinhala": "සෝඩා", "ipa": "soḍā", "meaning": "탄산음료" },
+    { "id": 12, "sinhala": "සෝඩා වතුර", "ipa": "soḍā vathura", "meaning": "탄산수" },
+
+    { "id": 13, "sinhala": "ලෙමන් ජූස්", "ipa": "leman jūsu", "meaning": "레몬 주스" },
+    { "id": 14, "sinhala": "දෙහි ජූස්", "ipa": "dehi jūsu", "meaning": "라임 주스" },
+    { "id": 15, "sinhala": "අඹ ජූස්", "ipa": "amba jūsu", "meaning": "망고 주스" },
+
+    { "id": 16, "sinhala": "අයිස් ටී", "ipa": "ais thē", "meaning": "아이스티" },
+    { "id": 17, "sinhala": "යෝගට් බීම", "ipa": "yōgaṭ bīma", "meaning": "요거트 음료" },
+    { "id": 18, "sinhala": "ඉඟුරු තේ", "ipa": "iṅguru thē", "meaning": "생강차" }
+  ]
+}

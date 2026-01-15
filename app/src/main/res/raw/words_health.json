@@ -1,0 +1,32 @@
+{
+  "chapter": "health_1",
+  "title": "건강에 대한 표현",
+  "items": [
+    { "id": 1, "sinhala": "සුවයි", "ipa": "suvayi", "meaning": "건강한" },
+    { "id": 2, "sinhala": "අසනීපයි", "ipa": "asanīpayi", "meaning": "아픈" },
+    { "id": 3, "sinhala": "රෝගය", "ipa": "rōgaya", "meaning": "병" },
+    { "id": 4, "sinhala": "වේදනාව", "ipa": "vēdanāva", "meaning": "통증" },
+
+    { "id": 5, "sinhala": "කැස්ස", "ipa": "kæssa", "meaning": "기침" },
+    { "id": 6, "sinhala": "කැස්ස දානවා", "ipa": "kæssa dānavā", "meaning": "기침하다" },
+    { "id": 7, "sinhala": "සෙම්ප්‍රතිශ්‍යාව", "ipa": "sempratiśyāva", "meaning": "감기" },
+    { "id": 8, "sinhala": "ගැරි", "ipa": "gæri", "meaning": "가래" },
+
+    { "id": 9, "sinhala": "බෙහෙත්", "ipa": "beheth", "meaning": "약" },
+    { "id": 10, "sinhala": "බෙහෙත් බොන්න", "ipa": "beheth bonna", "meaning": "약을 먹다" },
+
+    { "id": 11, "sinhala": "රිදෙනවා", "ipa": "ridenavā", "meaning": "아프다" },
+    { "id": 12, "sinhala": "හුස්ම ගන්නවා", "ipa": "husma gannavā", "meaning": "숨쉬다" },
+    { "id": 13, "sinhala": "හිඟෙනවා", "ipa": "hiṅgenavā", "meaning": "살짝 급하다" },
+    { "id": 14, "sinhala": "නරක වෙනවා", "ipa": "naraka venavā", "meaning": "곪다" },
+
+    { "id": 15, "sinhala": "කැපෙනවා", "ipa": "kæpenavā", "meaning": "베이다" },
+    { "id": 16, "sinhala": "ලේ ගලනවා", "ipa": "lē galanavā", "meaning": "피가 나다" },
+    { "id": 17, "sinhala": "වෙදනාව", "ipa": "vedanāva", "meaning": "상처" },
+    { "id": 18, "sinhala": "වමනය කරනවා", "ipa": "vamanaya karanavā", "meaning": "구토하다" },
+
+    { "id": 19, "sinhala": "කරකැවිල්ල", "ipa": "karakævilla", "meaning": "어지럼" },
+    { "id": 20, "sinhala": "තැලෙනවා", "ipa": "tælenavā", "meaning": "멍들다" },
+    { "id": 21, "sinhala": "කැගහැද", "ipa": "kægahæda", "meaning": "감감하다" }
+  ]
+}
