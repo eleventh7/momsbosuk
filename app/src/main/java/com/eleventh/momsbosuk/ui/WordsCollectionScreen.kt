@@ -41,17 +41,21 @@ data class CategorySpec(
 @Composable
 fun WordsCollectionScreen(onExitApp: () -> Unit) {
     val ctx = LocalContext.current
+    val categories = remember { availableCategories(ctx) }
 
-    // 선택 전: null → 카테고리 목록, 선택 후: 상세
-    var selected by rememberSaveable  { mutableStateOf<CategorySpec?>(null) }
+    // ✅ Saveable에는 String만 저장
+    var selectedId by rememberSaveable { mutableStateOf<String?>(null) }
     var showExitDialog by rememberSaveable { mutableStateOf(false) }
     var isHangulMode by rememberSaveable { mutableStateOf(false) }
 
-    // ✅ 시스템 뒤로: 상세면 목록으로, 목록이면 종료 다이얼로그
+    val selected: CategorySpec? = remember(selectedId, categories) {
+        selectedId?.let { id -> categories.firstOrNull { it.id == id } }
+    }
+
     BackHandler {
-        if (selected != null) {
+        if (selectedId != null) {
             showExitDialog = false
-            selected = null
+            selectedId = null
         } else {
             showExitDialog = true
         }
@@ -74,22 +78,20 @@ fun WordsCollectionScreen(onExitApp: () -> Unit) {
         )
     }
 
-    if (selected == null) {
+    if (selectedId == null) {
         CategoriesListScreen(
-            categories = remember { availableCategories(ctx) },
-            onOpen = { selected = it }
+            categories = categories,
+            onOpen = { selectedId = it.id }
         )
     } else {
         CategoryDetailScreen(
             category = selected!!,
             isHangulMode = isHangulMode,
-            onToggle = {
-                //Log.d("ChapterWords", "onToggle 호출됨 (아직 기능 없음)")
-                isHangulMode = !isHangulMode
-            }
+            onToggle = { isHangulMode = !isHangulMode }
         )
     }
 }
+
 
 /* ------------------ A. 목록 ------------------ */
 @OptIn(ExperimentalMaterial3Api::class)

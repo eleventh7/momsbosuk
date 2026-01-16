@@ -32,17 +32,23 @@ import androidx.compose.material.icons.filled.Subway
 @Composable
 fun ChapterWordsScreen(onExitApp: () -> Unit) {
     val ctx = LocalContext.current
+    val categories = remember { availableWordChaptersFromCollection(ctx) }
 
     // 선택 전: null → 목록, 선택 후: 상세
-    var selected by rememberSaveable { mutableStateOf<CategorySpec?>(null) }
+    //var selected by rememberSaveable { mutableStateOf<String?>(null) }
+    var selectedId by rememberSaveable { mutableStateOf<String?>(null) }
     var showExitDialog by rememberSaveable { mutableStateOf(false) }
     var isHangulMode by rememberSaveable { mutableStateOf(false) }
 
+    val selected: CategorySpec? = remember(selectedId, categories) {
+        selectedId?.let { id -> categories.firstOrNull { it.id == id } }
+    }
+
     // ✅ 시스템 뒤로: 상세면 목록으로, 목록이면 종료 다이얼로그
     BackHandler {
-        if (selected != null) {
+        if (selectedId != null) {
             showExitDialog = false
-            selected = null
+            selectedId = null
         } else {
             showExitDialog = true
         }
@@ -65,19 +71,16 @@ fun ChapterWordsScreen(onExitApp: () -> Unit) {
         )
     }
 
-    if (selected == null) {
+    if (selectedId == null) {
         ChapterWordsListScreen(
-            categories = remember { availableWordChaptersFromCollection(ctx) },
-            onOpen = { selected = it }
+            categories = categories,
+            onOpen = { selectedId = it.id }
         )
     } else {
         ChapterWordsDetailScreen(
             category = selected!!,
             isHangulMode = isHangulMode,
-            onToggle = {
-                //Log.d("ChapterWords", "onToggle 호출됨 (아직 기능 없음)")
-                isHangulMode = !isHangulMode
-            }
+            onToggle = {isHangulMode = !isHangulMode }
         )
     }
 }
