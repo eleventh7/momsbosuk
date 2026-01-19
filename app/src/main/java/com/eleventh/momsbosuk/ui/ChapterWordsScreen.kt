@@ -26,6 +26,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material.icons.filled.Shuffle
 import androidx.compose.material.icons.filled.Subway
+import kotlin.random.Random
 
 
 
@@ -165,10 +166,20 @@ private fun ChapterWordsDetailScreen(
     val maxSize = 48
     val step = 2
 
+    // 1. 데이터를 로드합니다.
     val resId = remember(category.source) {
         ctx.resources.getIdentifier(category.source, "raw", ctx.packageName)
     }
     val result = remember(resId) { loadChapterFromRawSafe(ctx, resId) }
+
+    // 2. 섞기 상태에 따라 리스트를 변환합니다.
+    // remember(result, isShuffled)를 통해 데이터가 바뀌거나 셔플 버튼을 누를 때만 계산합니다.
+    val displayItems = remember(result, isShuffled) {
+        result.getOrNull()?.items?.let { items ->
+            if (isShuffled) items.shuffled() else items
+        } ?: emptyList()
+    }
+
 
     Scaffold(
         topBar = {
@@ -260,33 +271,40 @@ private fun ChapterWordsDetailScreen(
 
         result.fold(
             onSuccess = { payload ->
-                LazyColumn(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(inner),
-                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)
-                ) {
-                    items(payload.items, key = { it.id }) { item ->
-                        val isExpanded = expandedMap[item.id] == true
-                        if (isHangulMode) {
-                            WordRowHangul(
-                                item = item,
-                                expanded = isExpanded,
-                                onToggle = { expandedMap[item.id] = !isExpanded },
-                                wordFontSize = wordFontSize,
-                                showMeaning = showMeaning
-                            )
-                        } else {
-                            WordRow(
-                                item = item,
-                                expanded = isExpanded,
-                                onToggle = { expandedMap[item.id] = !isExpanded },
-                                wordFontSize = wordFontSize,
-                                showMeaning = showMeaning
-                            )
+
+                if (displayItems.isNotEmpty()) {
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(inner),
+                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)
+                    ) {
+                        items(displayItems, key = { it.id }) { item ->
+                            val isExpanded = expandedMap[item.id] == true
+                            if (isHangulMode) {
+                                WordRowHangul(
+                                    item = item,
+                                    expanded = isExpanded,
+                                    onToggle = { expandedMap[item.id] = !isExpanded },
+                                    wordFontSize = wordFontSize,
+                                    showMeaning = showMeaning
+                                )
+                            } else {
+                                WordRow(
+                                    item = item,
+                                    expanded = isExpanded,
+                                    onToggle = { expandedMap[item.id] = !isExpanded },
+                                    wordFontSize = wordFontSize,
+                                    showMeaning = showMeaning
+                                )
+                            }
                         }
                     }
+                } else if (result.isFailure) {
+                    // 실패 처리 로직...
                 }
+
+
             },
             onFailure = { err ->
                 Box(
