@@ -15,6 +15,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.eleventh.momsbosuk.data.WordItem
+import android.speech.tts.TextToSpeech
+import java.util.Locale
+
 
 @Composable
 fun WordRowHangul(
@@ -23,7 +26,9 @@ fun WordRowHangul(
     onToggle: () -> Unit,           // ✅ 부모가 토글
     modifier: Modifier = Modifier,
     wordFontSize: Int = 26,
-    showMeaning: Boolean = false
+    showMeaning: Boolean = false,
+    tts: TextToSpeech,
+    ttsReady: Boolean = false
 ) {
     val context = LocalContext.current
 
@@ -54,16 +59,12 @@ fun WordRowHangul(
             if (showDetail) {
                 IconButton(
                     onClick = {
-                        // 오디오 검색 키워드 정책은 WordRow와 동일하게 유지
-                        val keyword = when {
-                            item.sinhala.isNotBlank() -> item.sinhala
-                            item.ipa.isNotBlank() -> item.ipa
-                            else -> item.meaning
-                        }
-                        val query = Uri.encode(keyword)
-                        val url =
-                            "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=si&q=$query"
-                        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                        tts.speak(
+                            " ${item.sinhala} ",
+                            TextToSpeech.QUEUE_FLUSH,
+                            null,
+                            "WORD_${item.id}"
+                        )
                     },
                     modifier = Modifier.size(36.dp)
                 ) {

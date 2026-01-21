@@ -27,7 +27,9 @@ import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material.icons.filled.Shuffle
 import androidx.compose.material.icons.filled.Subway
 import kotlin.random.Random
-
+import android.content.Intent
+import android.speech.tts.TextToSpeech
+import java.util.Locale
 
 
 @Composable
@@ -150,11 +152,34 @@ private fun ChapterWordsDetailScreen(
     onToggle: () -> Unit
 ) {
     val ctx = LocalContext.current
+    var ttsReady by remember { mutableStateOf(false) }
 
     // 뜻 보기 토글
     var showMeaning by remember { mutableStateOf(false) }
     val expandedMap = remember { mutableStateMapOf<Int, Boolean>() } // WordItem.id가 Int면 그대로 OK
     var isShuffled by remember { mutableStateOf(false) }
+
+    var tts by remember { mutableStateOf<TextToSpeech?>(null) }
+
+    LaunchedEffect(Unit) {
+        tts = TextToSpeech(ctx) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val r = tts?.setLanguage(Locale("si", "LK"))
+                ttsReady = (r != TextToSpeech.LANG_MISSING_DATA &&
+                        r != TextToSpeech.LANG_NOT_SUPPORTED)
+                if (ttsReady) tts?.setSpeechRate(0.7f)
+            } else {
+                ttsReady = false
+            }
+        }
+    }
+
+    DisposableEffect(Unit) {
+        onDispose {
+            tts?.stop()
+            tts?.shutdown()
+        }
+    }
 
     LaunchedEffect(showMeaning) {
         if (!showMeaning) expandedMap.clear()
@@ -279,24 +304,38 @@ private fun ChapterWordsDetailScreen(
                             .padding(inner),
                         contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)
                     ) {
+                        val installTts = {
+                            val intent = Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA)
+                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            ctx.startActivity(intent)
+                        }
+
+                        Log.d("ttsReady","ttsReady:" + ttsReady.toString())
+
                         items(displayItems, key = { it.id }) { item ->
                             val isExpanded = expandedMap[item.id] == true
-                            if (isHangulMode) {
-                                WordRowHangul(
-                                    item = item,
-                                    expanded = isExpanded,
-                                    onToggle = { expandedMap[item.id] = !isExpanded },
-                                    wordFontSize = wordFontSize,
-                                    showMeaning = showMeaning
-                                )
-                            } else {
-                                WordRow(
-                                    item = item,
-                                    expanded = isExpanded,
-                                    onToggle = { expandedMap[item.id] = !isExpanded },
-                                    wordFontSize = wordFontSize,
-                                    showMeaning = showMeaning
-                                )
+                            tts?.let { ttsNonNull ->
+                                if (isHangulMode) {
+                                    WordRowHangul(
+                                        item = item,
+                                        expanded = isExpanded,
+                                        onToggle = { expandedMap[item.id] = !isExpanded },
+                                        wordFontSize = wordFontSize,
+                                        showMeaning = showMeaning,
+                                        tts = ttsNonNull,
+                                        ttsReady = ttsReady
+                                    )
+                                } else {
+                                    WordRow(
+                                        item = item,
+                                        expanded = isExpanded,
+                                        onToggle = { expandedMap[item.id] = !isExpanded },
+                                        wordFontSize = wordFontSize,
+                                        showMeaning = showMeaning,
+                                        tts = ttsNonNull,
+                                        ttsReady = ttsReady
+                                    )
+                                }
                             }
                         }
                     }
