@@ -1,0 +1,54 @@
+{
+  "chapter": "excuse",
+  "title": "실례합니다",
+  "items": [
+    {
+      "id": 1,
+      "sinhala": "ආයුබෝවන්.",
+      "meaning": "안녕하세요. ",
+      "ipa": "/aːjubōːʋan/"
+    },
+    {
+      "id": 2,
+      "sinhala": "සමාවෙන්න.",
+      "meaning": "실례합니다.",
+      "ipa": "/samāʋenːna/"
+    },
+    {
+      "id": 3,
+      "sinhala": "ගෙදර කෙනෙක් ඉන්නවද?",
+      "meaning": "집에 계신가요?",
+      "ipa": "/ɡed̪ara kenek innəʋad̪a/"
+    },
+    {
+      "id": 4,
+      "sinhala": "අපි කොරියාවෙන් ආවා.",
+      "meaning": "우리는 한국에서 왔습니다.",
+      "ipa": "/api koriyaːʋen aːʋa/"
+    },
+    {
+      "id": 5,
+      "sinhala": "ඔබගේ ආගම මොකක්ද?",
+      "meaning": "당신의 종교는 무엇인가요?",
+      "ipa": "/obaɡe aːɡama mokakd̪a/"
+    },
+    {
+      "id": 6,
+      "sinhala": "අපි දෙවියන් වහන්සේගේ වචනය කියන්න ආවා.",
+      "meaning": "우리는 하나님의 말씀을 전하러 왔습니다.",
+      "ipa": "/api d̪eʋijan ʋahansēɡe ʋaːt͡ʃanaja kijanna aːʋa/"
+    },
+    {
+      "id": 7,
+      "sinhala": "ටික වෙලාවක් අහලා බලන්න පුළුවන්ද?",
+      "meaning": "잠시 들어보시겠어요?",
+      "ipa": "/ʈikə ʋelaːʋak ahala balanna puɭuʋand̪a/"
+    },
+    {
+      "id": 8,
+      "sinhala": "දෙවි පිහිටයි.",
+      "meaning": "복 많이 받으세요.",
+      "ipa": "/d̪eʋi pihiʈaj/"
+    }
+  ]
+}

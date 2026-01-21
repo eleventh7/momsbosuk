@@ -1,0 +1,60 @@
+{
+  "chapter": "sent_basic",
+  "title": "기초 문장",
+  "items": [
+    {
+      "id": 1,
+      "sinhala": "මම දේවදූතයෙකි.",
+      "meaning": "나는 천사입니다.",
+      "ipa": "mama dēvadūtayeki"
+    },
+    {
+      "id": 2,
+      "sinhala": "ඇය දේවදූතයෙකි.",
+      "meaning": "그녀는 천사입니다.",
+      "ipa": "æya dēvadūtayeki"
+    },
+    {
+      "id": 3,
+      "sinhala": "මෙය මගේ පොතයි.",
+      "meaning": "이것은 나의 책입니다.",
+      "ipa": "meya mage potayi"
+    },
+    {
+      "id": 4,
+      "sinhala": "කරුණාකර මට පානයක් දෙන්න.",
+      "meaning": "제게 음료수를 주세요.",
+      "ipa": "karuṇākarə mata pānayak denna"
+    },
+    {
+      "id": 5,
+      "sinhala": "ඔබට දෙන්නද?",
+      "meaning": "당신에게 줄까요?",
+      "ipa": "obata dennada"
+    },
+    {
+      "id": 6,
+      "sinhala": "ඇයට දෙන්නද?",
+      "meaning": "그(녀)에게 줄까요?",
+      "ipa": "æyata dennada"
+    },
+    {
+      "id": 7,
+      "sinhala": "අපි දෙවියන්වහන්සේගේ සබාවේ මිනිසුන් වෙමු.",
+      "meaning": "우리는 하나님의 교회 사람입니다.",
+      "ipa": "api deviyanvahansēge sabhāvē minisun vemu"
+    },
+    {
+      "id": 8,
+      "sinhala": "ඔවුන් කවුද?",
+      "meaning": "그들은 누구인가요?",
+      "ipa": "ovun kauda"
+    },
+    {
+      "id": 9,
+      "sinhala": "ඔබලා කවුද?",
+      "meaning": "당신들은 누구십니까?",
+      "ipa": "obalā kauda"
+    }
+  ]
+}

@@ -42,5 +42,5 @@ fun MomsBosukApp(
 enum class MainTab(val label: String) {
     COLLECTIONS("단어 모음"),
     PERIOD_WORDS("n교시 단어"),
-    PERIOD_SENTENCES("n교시 문장")
+    PERIOD_SENTENCES("문장 모음")
 }

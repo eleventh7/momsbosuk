@@ -30,6 +30,8 @@
 
     { "id": 22, "sinhala": "අහනවා", "ipa": "ahanavā", "meaning": "묻다" },
     { "id": 23, "sinhala": "අහමුද?", "ipa": "ahumudha?", "meaning": "물어볼까요?" },
-    { "id": 24, "sinhala": "අහන්න", "ipa": "ahanna", "meaning": "물어봐" }
+    { "id": 24, "sinhala": "අහන්න", "ipa": "ahanna", "meaning": "물어봐" },
+    { "id": 25, "sinhala": "දෙවියන්වහන්සේගේ", "meaning": "하나님의" },
+    { "id": 26, "sinhala": "සබාවේ", "meaning": "교회" }
   ]
 }

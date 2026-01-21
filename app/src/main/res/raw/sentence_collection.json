@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "sent_excuse",
+      "title": "실례합니다.",
+      "source": "sent_excuse_me"
+    },
+    {
+      "id": "sent_basic",
+      "title": "나는 천사입니다.",
+      "source": "sent_basic"
+    }
+  ]
+}
