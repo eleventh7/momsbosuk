@@ -3,6 +3,7 @@ package com.eleventh.momsbosuk.ui
 import android.content.Context
 import android.content.Intent
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -23,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.eleventh.momsbosuk.R
 import com.eleventh.momsbosuk.data.loadChapterFromRawSafe
 import com.eleventh.momsbosuk.ui.components.SentencePanel
+import com.eleventh.momsbosuk.ui.components.SentenceRowHangul
 import org.json.JSONObject
 import java.util.Locale
 
@@ -33,6 +35,7 @@ fun ChapterSentencesScreen(onExitApp: () -> Unit) {
 
     var selectedId by rememberSaveable { mutableStateOf<String?>(null) }
     var showExitDialog by rememberSaveable { mutableStateOf(false) }
+    var isHangulMode by rememberSaveable { mutableStateOf(false) }
 
     val selected: CategorySpec? = remember(selectedId, categories) {
         selectedId?.let { id -> categories.firstOrNull { it.id == id } }
@@ -69,7 +72,11 @@ fun ChapterSentencesScreen(onExitApp: () -> Unit) {
             onOpen = { selectedId = it.id }
         )
     } else {
-        ChapterSentencesDetailScreen(category = selected!!)
+        ChapterSentencesDetailScreen(
+            category = selected!!,
+            isHangulMode = isHangulMode,
+            onToggle = {isHangulMode = !isHangulMode }
+        )
     }
 }
 
@@ -112,7 +119,9 @@ private fun ChapterSentencesListScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ChapterSentencesDetailScreen(
-    category: CategorySpec
+    category: CategorySpec,
+    isHangulMode: Boolean,
+    onToggle: () -> Unit
 ) {
     val ctx = LocalContext.current
 
@@ -166,8 +175,14 @@ private fun ChapterSentencesDetailScreen(
             CenterAlignedTopAppBar(
                 title = { Text(category.title) },
                 navigationIcon = {
-                    TextButton(onClick = { showMeaning = !showMeaning }) {
-                        Text(if (showMeaning) "뜻 숨기기" else "뜻 보기")
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        TextButton(onClick = {
+                            Log.d("ChapterWords", "한글로 버튼 클릭")
+                            onToggle()
+                        }) { Text(if (isHangulMode) "සිංහලෙන්" else "한글로"  ) }
+                        TextButton(onClick = { showMeaning = !showMeaning }) {
+                            Text(if (showMeaning) "뜻 숨기기" else "뜻 보기")
+                        }
                     }
                 },
                 actions = {
@@ -199,15 +214,27 @@ private fun ChapterSentencesDetailScreen(
                 val expanded = expandedMap[item.id] == true
 
                 tts?.let { ttsNonNull ->
-                    SentencePanel(
-                        item = item,
-                        expanded = expanded,
-                        onToggle = { expandedMap[item.id] = !expanded },
-                        fontSize = fontSize,
-                        showMeaning = showMeaning,
-                        tts = ttsNonNull,
-                        ttsReady = ttsReady
-                    )
+                    if (isHangulMode) {
+                        SentenceRowHangul(
+                            item = item,
+                            expanded = expanded,
+                            onToggle = { expandedMap[item.id] = !expanded },
+                            fontSize = fontSize,
+                            showMeaning = showMeaning,
+                            tts = ttsNonNull,
+                            ttsReady = ttsReady
+                        )
+                    } else {
+                        SentencePanel(
+                            item = item,
+                            expanded = expanded,
+                            onToggle = { expandedMap[item.id] = !expanded },
+                            fontSize = fontSize,
+                            showMeaning = showMeaning,
+                            tts = ttsNonNull,
+                            ttsReady = ttsReady
+                        )
+                    }
                 }
             }
         }
