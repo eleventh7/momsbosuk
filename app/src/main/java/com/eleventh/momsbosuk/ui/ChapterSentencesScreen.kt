@@ -138,14 +138,14 @@ private fun ChapterSentencesDetailScreen(
     var ttsReady by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
-        tts = TextToSpeech(ctx) { status ->
+        tts = TextToSpeech(ctx, { status ->
             if (status == TextToSpeech.SUCCESS) {
                 val r = tts?.setLanguage(Locale("si", "LK"))
                 ttsReady = r != TextToSpeech.LANG_MISSING_DATA &&
                         r != TextToSpeech.LANG_NOT_SUPPORTED
                 if (ttsReady) tts?.setSpeechRate(0.7f)
             }
-        }
+        }, "com.google.android.tts") // 구글 엔진 강제 지정
     }
 
     DisposableEffect(Unit) {

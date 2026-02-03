@@ -162,7 +162,7 @@ private fun ChapterWordsDetailScreen(
     var tts by remember { mutableStateOf<TextToSpeech?>(null) }
 
     LaunchedEffect(Unit) {
-        tts = TextToSpeech(ctx) { status ->
+        tts = TextToSpeech(ctx, { status ->
             if (status == TextToSpeech.SUCCESS) {
                 val r = tts?.setLanguage(Locale("si", "LK"))
                 ttsReady = (r != TextToSpeech.LANG_MISSING_DATA &&
@@ -171,7 +171,7 @@ private fun ChapterWordsDetailScreen(
             } else {
                 ttsReady = false
             }
-        }
+        } , "com.google.android.tts") // 구글 엔진 강제 지정
     }
 
     DisposableEffect(Unit) {
@@ -226,16 +226,6 @@ private fun ChapterWordsDetailScreen(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(3.dp)
                     ) {
-//                        TextButton(
-//                            onClick = { if (wordFontSize > minSize) wordFontSize -= step },
-//                            enabled = wordFontSize > minSize
-//                        ) { Text("–", fontSize = 20.sp) }
-//
-//                        TextButton(
-//                            onClick = { if (wordFontSize < maxSize) wordFontSize += step },
-//                            enabled = wordFontSize < maxSize
-//                        ) { Text("+", fontSize = 20.sp) }
-
                         IconButton(
                             onClick = { if (wordFontSize > minSize) wordFontSize -= step },
                             enabled = wordFontSize > minSize
@@ -304,13 +294,6 @@ private fun ChapterWordsDetailScreen(
                             .padding(inner),
                         contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)
                     ) {
-                        val installTts = {
-                            val intent = Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA)
-                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            ctx.startActivity(intent)
-                        }
-
-                        Log.d("ttsReady","ttsReady:" + ttsReady.toString())
 
                         items(displayItems, key = { it.id }) { item ->
                             val isExpanded = expandedMap[item.id] == true
@@ -340,7 +323,7 @@ private fun ChapterWordsDetailScreen(
                         }
                     }
                 } else if (result.isFailure) {
-                    // 실패 처리 로직...
+                    Log.d("ChapterWordsDetailScreen","displayItems result.isFailure")
                 }
 
 
